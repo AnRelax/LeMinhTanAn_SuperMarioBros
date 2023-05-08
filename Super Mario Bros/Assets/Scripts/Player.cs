@@ -23,14 +23,14 @@ public class Player : MonoBehaviour
 
     public void Hit()
     {
-        //if (!dead && !starpower)
-        //{
+        if (!dead && !starpower)
+        {
             if (big) {
                 Shrink();
             } else {
                 Death();
             }
-        //}
+        }
     }
 
     public void Death()
@@ -42,17 +42,17 @@ public class Player : MonoBehaviour
         GameManager.Instance.ResetLevel(3f);
     }
 
-    // public void Grow()
-    // {
-    //     smallRenderer.enabled = false;
-    //     bigRenderer.enabled = true;
-    //     activeRenderer = bigRenderer;
+    public void Grow()
+    {
+        smallRenderer.enabled = false;
+        bigRenderer.enabled = true;
+        activeRenderer = bigRenderer;
 
-    //     capsuleCollider.size = new Vector2(1f, 2f);
-    //     capsuleCollider.offset = new Vector2(0f, 0.5f);
+        capsuleCollider.size = new Vector2(1f, 2f);
+        capsuleCollider.offset = new Vector2(0f, 0.5f);
 
-    //     StartCoroutine(ScaleAnimation());
-    // }
+        StartCoroutine(ScaleAnimation());
+    }
 
     public void Shrink()
     {
@@ -106,13 +106,13 @@ public class Player : MonoBehaviour
             elapsed += Time.deltaTime;
 
             if (Time.frameCount % 4 == 0) {
-                //activeRenderer.spriteRenderer.color = Random.ColorHSV(0f, 1f, 1f, 1f, 1f, 1f);
+                activeRenderer.spriteRenderer.color = Random.ColorHSV(0f, 1f, 1f, 1f, 1f, 1f);
             }
 
             yield return null;
         }
 
-        //activeRenderer.spriteRenderer.color = Color.white;
+        activeRenderer.spriteRenderer.color = Color.white;
         starpower = false;
     }
 }

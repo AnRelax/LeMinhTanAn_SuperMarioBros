@@ -14,18 +14,14 @@ public class Koopa : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>();
 
-            // if (player.starpower) {
-            //     Hit();
-            // } else if (collision.transform.DotTest(transform, Vector2.down)) {
-            //     EnterShell();
-            // }  else {
-            //     player.Hit();
-            // }
-            if (collision.transform.DotTest(transform, Vector2.down)) {
+            if (player.starpower) {
+                Hit();
+            } else if (collision.transform.DotTest(transform, Vector2.down)) {
                 EnterShell();
             }  else {
                 player.Hit();
             }
+           
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerSpriteRenderer : MonoBehaviour
 {
     private PlayerMovement movement;
-    private SpriteRenderer spriteRenderer; //{ get; private set; }
+    public SpriteRenderer spriteRenderer{ get; private set;}
     public Sprite idle;
     public Sprite jump;
     public Sprite slide;

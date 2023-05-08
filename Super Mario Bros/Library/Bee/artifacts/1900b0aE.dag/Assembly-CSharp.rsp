@@ -342,6 +342,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/AnimatedSprite.cs"
+"Assets/Scripts/BlockCoin.cs"
+"Assets/Scripts/BlockHit.cs"
+"Assets/Scripts/BlockItem.cs"
 "Assets/Scripts/DeathAnimation.cs"
 "Assets/Scripts/DeathBarrier.cs"
 "Assets/Scripts/EntityMovement.cs"
@@ -352,6 +355,7 @@
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/PlayerSpriteRenderer.cs"
+"Assets/Scripts/PowerUp.cs"
 "Assets/Scripts/SideScrolling.cs"
 -langversion:8.0
 
