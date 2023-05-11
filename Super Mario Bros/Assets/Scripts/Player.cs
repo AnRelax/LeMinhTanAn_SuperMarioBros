@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Audio audioScript;
     public PlayerSpriteRenderer smallRenderer;
     public PlayerSpriteRenderer bigRenderer;
     private PlayerSpriteRenderer activeRenderer;
@@ -21,6 +22,9 @@ public class Player : MonoBehaviour
         activeRenderer = smallRenderer;
     }
 
+     private void Start() {
+        audioScript = GameObject.Find("AudioMarioBros").GetComponent<Audio>();
+    }
     public void Hit()
     {
         if (!dead && !starpower)
@@ -35,6 +39,8 @@ public class Player : MonoBehaviour
 
     public void Death()
     {
+        audioScript.MarioCloseAudio();
+
         smallRenderer.enabled = false;
         bigRenderer.enabled = false;
         deathAnimation.enabled = true;

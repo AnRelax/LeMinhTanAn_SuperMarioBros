@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2938452933781992817}
   - component: {fileID: 2938452933781992819}
+  - component: {fileID: 2887486996511734182}
   m_Layer: 2
   m_Name: Flag Pole
   m_TagString: Untagged
@@ -257,6 +258,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &2887486996511734182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938452933781992816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32babf8b92235d9459512f13e275667e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flag: {fileID: 2938452932198393825}
+  poleBottom: {fileID: 2938452932860087480}
+  caslte: {fileID: 0}
+  speed: 6
 --- !u!1001 &4579141958250932531
 PrefabInstance:
   m_ObjectHideFlags: 0

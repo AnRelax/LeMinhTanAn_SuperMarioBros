@@ -52,6 +52,9 @@
      <Compile Include="Assets\Scripts\Goomba.cs" />
      <Compile Include="Assets\Scripts\DeathAnimation.cs" />
      <Compile Include="Assets\Scripts\DeathBarrier.cs" />
+     <Compile Include="Assets\Scripts\Pipe.cs" />
+     <Compile Include="Assets\Scripts\FlagPole.cs" />
+     <Compile Include="Assets\Scripts\Audio.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity 2021.1.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

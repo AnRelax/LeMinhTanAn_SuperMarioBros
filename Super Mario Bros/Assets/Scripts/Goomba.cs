@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Goomba : MonoBehaviour
 {
-   public Sprite flatSprite;
+    private Audio audioScript;
+    public Sprite flatSprite;
+
+    private void Start() {
+        audioScript = GameObject.Find("AudioMarioBros").GetComponent<Audio>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -30,6 +35,8 @@ public class Goomba : MonoBehaviour
 
     private void Flatten()
     {
+        audioScript.GoombaAudio();
+
         GetComponent<Collider2D>().enabled = false;
         GetComponent<EntityMovement>().enabled = false;
         GetComponent<AnimatedSprite>().enabled = false;
@@ -39,6 +46,7 @@ public class Goomba : MonoBehaviour
 
     private void Hit()
     {
+
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<DeathAnimation>().enabled = true;
         Destroy(gameObject, 3f);
