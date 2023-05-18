@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Koopa : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class Koopa : MonoBehaviour
 
     private bool shelled;
     private bool pushed;
-
+    public Text scoresText;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!shelled && collision.gameObject.CompareTag("Player"))
@@ -55,6 +56,13 @@ public class Koopa : MonoBehaviour
     {
         shelled = true;
 
+        GameManager.Instance.AddScoresKoopa();
+        if(GameManager.diem < 1000000){
+            scoresText.text = GameManager.diem.ToString("D6");
+        }else{
+            scoresText.text = "Choi ma` hack ?";
+        }
+        
         GetComponent<SpriteRenderer>().sprite = shellSprite;
         GetComponent<AnimatedSprite>().enabled = false;
         GetComponent<EntityMovement>().enabled = false;

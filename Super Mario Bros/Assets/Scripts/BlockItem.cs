@@ -3,7 +3,11 @@ using System.Collections;
 
 public class BlockItem : MonoBehaviour
 {
+    private Audio audioScript;
+
     private void Start() {
+        audioScript = GameObject.Find("AudioMarioBros").GetComponent<Audio>();
+        audioScript.ItemblockAudio();
         StartCoroutine(Animate());
     }
     private IEnumerator Animate(){

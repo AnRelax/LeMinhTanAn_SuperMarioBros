@@ -1,13 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BlockCoin : MonoBehaviour
 {
+    private Audio audioScript;
+    public Text scoresText;
     private void Start() {
         GameManager.Instance.AddCoin();
+        audioScript = GameObject.Find("AudioMarioBros").GetComponent<Audio>();
         StartCoroutine(Animate());
     }
      private IEnumerator Animate(){
+        audioScript.CoinAudio();
+
         Vector3 restingPosition = transform.localPosition;
         Vector3 animatedPosition = restingPosition + Vector3.up * 2f;
         

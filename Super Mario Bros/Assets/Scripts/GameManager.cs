@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -9,7 +10,10 @@ public class GameManager : MonoBehaviour
     public int stage { get; private set; }
     public int lives { get; private set; }
     public int coins { get; private set; }
-
+    public int scores { get; set; }
+    public static int diem = 0;
+    public static int dongCoin = 0;
+    public static int mang = 0;
     private void Awake()
     {
         if (Instance != null) {
@@ -30,15 +34,17 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 180;
-
         NewGame();
     }
 
     public void NewGame()
     {
         lives = 3;
+        mang = lives;
         coins = 0;
-
+        dongCoin = coins;
+        scores = 0;
+        diem = scores;
         LoadLevel(1, 1);
     }
 
@@ -76,6 +82,7 @@ public class GameManager : MonoBehaviour
         } else {
             GameOver();
         }
+        mang = lives;
     }
 
     public void AddCoin()
@@ -87,10 +94,32 @@ public class GameManager : MonoBehaviour
             coins = 0;
             AddLife();
         }
+        dongCoin = coins;
+    }
+    public void AddScoresCoin(){
+        scores += 100;
+        diem = scores;
+    }
+    public void AddScoresGoomba(){
+        scores += 200;
+        diem = scores;
+    }
+    public void AddScoresFlagPole(){
+        scores += 1000;
+        diem = scores;
+    }
+    public void AddScoresKoopa(){
+        scores += 300;
+        diem = scores;
+    }
+    public void AddScoresPowerUp(){
+        scores += 500;
+        diem = scores;
     }
 
     public void AddLife()
     {
         lives++;
+        mang = lives;
     }
 }

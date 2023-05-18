@@ -20,6 +20,7 @@ public class Audio : MonoBehaviour
     public AudioClip itemblockAudio;
     public AudioClip levelClearAudio;
     public AudioClip gameOverAudio;
+    public AudioClip brickAudio;
 
     
     private void Start() {
@@ -54,11 +55,16 @@ public class Audio : MonoBehaviour
         audioSource.PlayOneShot(bumpAudio);
     }
     public void MarioCloseAudio(){
-        //can xu li
-        audioSource.PlayOneShot(marioCloseAudio);
+        audioSource.clip = marioCloseAudio;
+        audioSource.playOnAwake = true;
+        audioSource.loop = false;
+        audioSource.Play();
     }
     public void PowerStartAudio(){
-        audioSource.PlayOneShot(powerStartAudio);
+        audioSource.clip = powerStartAudio;
+        audioSource.playOnAwake = true;
+        audioSource.loop = true;
+        audioSource.Play();
     }
     public void TimeSpeedAudio(){
         audioSource.PlayOneShot(timeSpeedAudio);
@@ -77,5 +83,8 @@ public class Audio : MonoBehaviour
     }
     public void GameOverAudio(){
         audioSource.PlayOneShot(gameOverAudio);
+    }
+    public void BrickAudio(){
+        audioSource.PlayOneShot(brickAudio);
     }
 }

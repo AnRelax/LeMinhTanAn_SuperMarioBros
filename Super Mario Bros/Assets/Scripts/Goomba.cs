@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Goomba : MonoBehaviour
 {
     private Audio audioScript;
     public Sprite flatSprite;
+    public Text scoresText;
 
     private void Start() {
         audioScript = GameObject.Find("AudioMarioBros").GetComponent<Audio>();
@@ -36,6 +38,14 @@ public class Goomba : MonoBehaviour
     private void Flatten()
     {
         audioScript.GoombaAudio();
+
+        GameManager.Instance.AddScoresGoomba();
+        //UIGame.Instance.AddScores();
+        if(GameManager.diem < 1000000){
+            scoresText.text = GameManager.diem.ToString("D6");
+        }else{
+            scoresText.text = "Choi ma` hack ?";
+        }
 
         GetComponent<Collider2D>().enabled = false;
         GetComponent<EntityMovement>().enabled = false;

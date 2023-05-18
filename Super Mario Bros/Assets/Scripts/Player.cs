@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,12 +9,17 @@ public class Player : MonoBehaviour
     public PlayerSpriteRenderer bigRenderer;
     private PlayerSpriteRenderer activeRenderer;
 
+    private GameManager gameManager;
+
     public CapsuleCollider2D capsuleCollider { get; private set; }
     public DeathAnimation deathAnimation { get; private set; }
 
     public bool big => bigRenderer.enabled;
     public bool dead => deathAnimation.enabled;
     public bool starpower { get; private set; }
+    public Text scoresText;
+    public Text coinText;
+    public Text life;
 
     private void Awake()
     {
@@ -22,8 +28,17 @@ public class Player : MonoBehaviour
         activeRenderer = smallRenderer;
     }
 
-     private void Start() {
+    private void Start() {
         audioScript = GameObject.Find("AudioMarioBros").GetComponent<Audio>();
+        scoresText.text = GameManager.diem.ToString("D6");
+        coinText.text = GameManager.dongCoin.ToString("D2");
+        life.text = GameManager.mang.ToString("D2");
+
+    }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "1UP"){
+            life.text = GameManager.mang.ToString("D2");
+        }
     }
     public void Hit()
     {
@@ -46,6 +61,7 @@ public class Player : MonoBehaviour
         deathAnimation.enabled = true;
 
         GameManager.Instance.ResetLevel(3f);
+        
     }
 
     public void Grow()
@@ -120,5 +136,7 @@ public class Player : MonoBehaviour
 
         activeRenderer.spriteRenderer.color = Color.white;
         starpower = false;
+        audioScript.playNen();
     }
+
 }

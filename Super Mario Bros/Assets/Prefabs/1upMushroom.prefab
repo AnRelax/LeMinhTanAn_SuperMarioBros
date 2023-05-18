@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3662208341189588597}
   m_Layer: 6
   m_Name: 1UPMushroom
-  m_TagString: Untagged
+  m_TagString: 1UP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,4 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51096354313e6644b95893e0dcba388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoresText: {fileID: 0}
+  coinText: {fileID: 0}
+  life: {fileID: 0}
   type: 1

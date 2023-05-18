@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6204630829413145907}
   - component: {fileID: 8090422394729228968}
   - component: {fileID: 5570430052934685394}
+  - component: {fileID: 8690592687590453749}
   m_Layer: 0
   m_Name: MysteryBlock
   m_TagString: Untagged
@@ -123,5 +124,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f77d2c3372ff04fbf768d929519a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
   emptyBlock: {fileID: 21300000, guid: 0c057401fbf74454fa3032deae7f0a61, type: 3}
   maxHit: 1
+  blockDestroy: {fileID: 0}
+  blockPrefab: {fileID: 0}
+  jumpForce: 5
+  fallForce: 50
+  spawnDelay: 0.0001
+  numberOfBlocks: 6
+  spawnPoint: {fileID: 0}
+  jumpDirections:
+  - {x: 0, y: 1}
+  - {x: 0.3, y: 1}
+  - {x: 0.6, y: 1}
+  - {x: -0.3, y: 1}
+  - {x: -0.6, y: 1}
+--- !u!95 &8690592687590453749
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166230116066908815}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70c379818a5b72c4b91b676610ca2a86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
