@@ -34,8 +34,8 @@ public class PowerUp : MonoBehaviour
                 if(GameManager.dongCoin < 100){
                     coinText.text = GameManager.dongCoin.ToString("D2");
                 }else{
-                    GameManager.mang++;
-                    life.text = GameManager.mang.ToString("D2");
+                    GameManager.life++;
+                    life.text = GameManager.life.ToString("D2");
                 }
                 audioScript.CoinAudio();
                 break;

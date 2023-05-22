@@ -8841,6 +8841,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1482007330}
     - target: {fileID: 911063368929141574, guid: e2a017e86bb4f7143bec12679faac5c7, type: 3}
+      propertyPath: time
+      value: 
+      objectReference: {fileID: 1870619557}
+    - target: {fileID: 911063368929141574, guid: e2a017e86bb4f7143bec12679faac5c7, type: 3}
+      propertyPath: stage
+      value: 
+      objectReference: {fileID: 15959574}
+    - target: {fileID: 911063368929141574, guid: e2a017e86bb4f7143bec12679faac5c7, type: 3}
+      propertyPath: world
+      value: 
+      objectReference: {fileID: 860164979}
+    - target: {fileID: 911063368929141574, guid: e2a017e86bb4f7143bec12679faac5c7, type: 3}
       propertyPath: coinText
       value: 
       objectReference: {fileID: 1249093056}

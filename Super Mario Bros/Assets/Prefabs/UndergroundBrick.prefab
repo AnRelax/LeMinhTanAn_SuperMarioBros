@@ -126,3 +126,19 @@ MonoBehaviour:
   item: {fileID: 0}
   emptyBlock: {fileID: 0}
   maxHit: -1
+  blockDestroy: {fileID: 0}
+  blockPrefab: {fileID: 2846089662258370870, guid: ea42e4b34033b264bae088b91eede56d, type: 3}
+  jumpForce: 5
+  fallForce: 50
+  spawnDelay: 0.0001
+  numberOfBlocks: 6
+  spawnPoint: {fileID: 0}
+  jumpDirections:
+  - {x: 0, y: 1}
+  - {x: 0.3, y: 1}
+  - {x: 0.6, y: 1}
+  - {x: -0.3, y: 1}
+  - {x: -0.6, y: 1}
+  scoresText: {fileID: 0}
+  coinText: {fileID: 0}
+  life: {fileID: 0}

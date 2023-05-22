@@ -70,7 +70,7 @@ public class Koopa : MonoBehaviour
 
     private void PushShell(Vector2 direction)
     {
-        pushed = true;
+        pushed = false;
 
         GetComponent<Rigidbody2D>().isKinematic = false;
 

@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
     public Text scoresText;
     public Text coinText;
     public Text life;
+    public Text world;
+    public Text stage;
+    public Text time;
+    public float countdownTime = 900f;
+    private float currentTime;
 
     private void Awake()
     {
@@ -29,15 +34,31 @@ public class Player : MonoBehaviour
     }
 
     private void Start() {
+        currentTime = countdownTime;
+
         audioScript = GameObject.Find("AudioMarioBros").GetComponent<Audio>();
         scoresText.text = GameManager.diem.ToString("D6");
         coinText.text = GameManager.dongCoin.ToString("D2");
-        life.text = GameManager.mang.ToString("D2");
+        life.text = GameManager.life.ToString("D2");
+        world.text = GameManager.worldNow.ToString("D1");
+        stage.text = GameManager.stageNow.ToString("D1");
+    }
+    private void Update() {
+        currentTime -= Time.deltaTime;
 
+        int seconds = Mathf.FloorToInt(currentTime);
+        time.text = seconds.ToString("D3");
+
+        if (currentTime <= 0)
+        {
+            // Xử lý khi đồng hồ đếm ngược đạt tới 0
+            // Ví dụ: Dừng trò chơi, hiển thị thông báo, vv.
+            // Điều chỉnh mã này dựa trên nhu cầu của bạn.
+        }
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "1UP"){
-            life.text = GameManager.mang.ToString("D2");
+            life.text = GameManager.life.ToString("D2");
         }
     }
     public void Hit()

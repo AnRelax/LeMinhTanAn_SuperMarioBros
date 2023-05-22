@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public int scores { get; set; }
     public static int diem = 0;
     public static int dongCoin = 0;
-    public static int mang = 0;
+    public static int life = 0;
+    public static int worldNow = 1;
+    public static int stageNow = 1;
     private void Awake()
     {
         if (Instance != null) {
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         lives = 3;
-        mang = lives;
+        life = lives;
         coins = 0;
         dongCoin = coins;
         scores = 0;
@@ -59,7 +61,8 @@ public class GameManager : MonoBehaviour
     {
         this.world = world;
         this.stage = stage;
-
+        worldNow = world;
+        stageNow = stage;
         SceneManager.LoadScene($"{world}-{stage}");
     }
 
@@ -82,7 +85,7 @@ public class GameManager : MonoBehaviour
         } else {
             GameOver();
         }
-        mang = lives;
+        life = lives;
     }
 
     public void AddCoin()
@@ -120,6 +123,6 @@ public class GameManager : MonoBehaviour
     public void AddLife()
     {
         lives++;
-        mang = lives;
+        life = lives;
     }
 }
