@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
+using System.Collections;
 public class Koopa : MonoBehaviour
 {
     public Sprite shellSprite;
@@ -9,6 +10,7 @@ public class Koopa : MonoBehaviour
     private bool shelled;
     private bool pushed;
     public Text scoresText;
+    public GameObject damageTextPrefab;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!shelled && collision.gameObject.CompareTag("Player"))
@@ -93,6 +95,42 @@ public class Koopa : MonoBehaviour
     {
         if (pushed) {
             Destroy(gameObject);
+        }
+    }
+
+    private void TakeDamage(int damage, bool isCritical)
+    {
+        GameObject damageTextObject = Instantiate(damageTextPrefab, transform.position, Quaternion.identity);
+        TextMeshPro damageTextMesh = damageTextObject.GetComponent<TextMeshPro>();
+        if(damageTextMesh != null){
+            damageTextMesh.text = damage.ToString("N0");
+            if (isCritical){
+                damageTextMesh.color = Color.red;
+            }
+            StartCoroutine(FlyUpFadeOutAndDestroy(damageTextObject, 2f, 1.25f));
+        }else{
+            Debug.Log("khong tim thay text mesh");
+        }
+    }
+    private IEnumerator FlyUpFadeOutAndDestroy(GameObject obj, float duration, float flySpeed)
+    {
+        TextMeshPro textMesh = obj.GetComponent<TextMeshPro>();
+        if (textMesh != null){
+            float elapsedTime = 0f;
+            float initialYPosition = obj.transform.position.y + 0.4f;
+            Color startColor = textMesh.color;
+            while (elapsedTime < duration){
+                float alpha = Mathf.Lerp(1f, 0f, elapsedTime / duration);
+                textMesh.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
+
+                float newYPosition = initialYPosition + (flySpeed * elapsedTime);
+                obj.transform.position = new Vector3(obj.transform.position.x, newYPosition, obj.transform.position.z);
+
+                elapsedTime += Time.deltaTime;
+                Destroy(obj, 2f);
+                yield return null;
+            }
+            
         }
     }
 }

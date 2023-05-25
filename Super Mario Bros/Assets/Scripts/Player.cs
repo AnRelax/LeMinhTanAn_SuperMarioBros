@@ -55,6 +55,9 @@ public class Player : MonoBehaviour
             // Ví dụ: Dừng trò chơi, hiển thị thông báo, vv.
             // Điều chỉnh mã này dựa trên nhu cầu của bạn.
         }
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            GameManager.Instance.LoadLevel(1, 0);
+        }
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "1UP"){

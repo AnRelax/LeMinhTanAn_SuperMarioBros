@@ -8,7 +8,7 @@ public class FlagPole : MonoBehaviour
     public Transform caslte;
     public float speed = 6f;
     public int nextWorld = 1;
-    public int nextStage = 1;
+    public int nextStage = 2;
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player")){
             StartCoroutine(MoveTo(flag, poleBottom.position));

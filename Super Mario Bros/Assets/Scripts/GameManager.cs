@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         dongCoin = coins;
         scores = 0;
         diem = scores;
-        LoadLevel(1, 1);
+        LoadLevel(1, 0);
     }
 
     public void GameOver()

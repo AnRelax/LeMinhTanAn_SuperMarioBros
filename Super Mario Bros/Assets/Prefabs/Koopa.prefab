@@ -155,6 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shellSprite: {fileID: 21300000, guid: f882caca8db1d9547be2c030f5a6b82e, type: 3}
   shellSpeed: 12
+  scoresText: {fileID: 0}
+  damageTextPrefab: {fileID: 0}
 --- !u!114 &5844890604045412128
 MonoBehaviour:
   m_ObjectHideFlags: 0
